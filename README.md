@@ -22,7 +22,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client == AxTrack::Client.new(api_key: ENV("AXTRACK_API_KEY"))
+```
+
+To list all trackers
+```ruby
+client.trackers
+```
+
+
+To get the information on a specific tracker
+```ruby
+client.tracker(:tracker_id)
+```
 
 ## Development
 

@@ -3,6 +3,17 @@
 require_relative "axTrack/version"
 
 module AxTrack
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Client, 'axTrack/client'
+  autoload :Collection, 'axTrack/collection'
+  autoload :Error, 'axTrack/error'
+  autoload :Object, 'axTrack/object'
+  autoload :Resource, 'axTrack/resource'
+
+  autoload :Tracker, 'axTrack/objects/tracker'
+  autoload :TrackerList, 'axTrack/objects/tracker_list'
+
+  autoload :TrackerResource, 'axTrack/resources/trackers'
+
+  class TrackerData < Object; end
+  class TrackersList < Object; end
 end
