@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ax_track (0.1.5)
+    ax_track (0.1.6)
       faraday (~> 1.7)
       faraday_middleware (~> 1.1)
 
