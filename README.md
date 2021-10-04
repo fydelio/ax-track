@@ -29,22 +29,24 @@ client == AxTrack::Client.new(api_key: ENV("AXTRACK_API_KEY"))
 ### Trackers
 ```ruby
 # Get a list of all trackers
-client.tracker_list
+client.tracker.list
 
 # Get the specific information of a specific tracker
-client.tracker(:tracker_id)
+client.tracker.retrieve(:tracker_id)
 ```
 
 ### Assets
 ```ruby
 # Get a list of all assets
-client.asset_list
+client.asset.list
 
 # Get a specific asset
-client.asset(:asset_id)
+client.asset.retrieve(:asset_id)
 
 # Update a specif asset
-client.tracker(:tracker_id)
+client.asset.update(:tracker_id, params)
+#to update the name
+client.tracker.update(:tracker_id, name: 'New name')
 ``
 
 ## Development
@@ -60,3 +62,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Open development
+* Pagination for development

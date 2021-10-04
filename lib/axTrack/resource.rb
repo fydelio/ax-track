@@ -25,10 +25,10 @@ module AxTrack
       @response = nil
     end
 
-    def request(http_method: :get, endpoint:, headers: {}, params: {}, result_subset: nil)
+    def request(http_method: :get, endpoint:, headers: {}, params: {}, body: {}, result_subset: nil)
       raise "Client not defined" unless defined? @client
       endpoint = endpoint + "/" unless endpoint[-1] == "/"
-      @response = client.connection.public_send(http_method, endpoint, params)
+      @response = client.connection.public_send(http_method, endpoint, params.merge(body))
 
       unless response_successful?
         raise error_class(response.status), "Code: #{response.status}, response: #{response.reason_phrase}"

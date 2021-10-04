@@ -15,27 +15,13 @@ module AxTrack
       @adapter = adapter
     end
 
-    def tracker_list
-      TrackerResource.new(self).list
+    def trackers
+      TrackerResource.new(self)
     end
 
-    def tracker(tracker_id)
-      TrackerResource.new(self).show(tracker_id)
-    end
 
-    def last_gps_position(tracker_id)
-      request(http_method: :get,
-              endpoint: "trackers/#{tracker_id}",
-              params: { fields: 'last_gps_measurement' },
-              result_subset: 'last_gps_measurement')
-    end
-
-    def asset_list
-      AssetResource.new(self).list
-    end
-
-    def asset(asset_id)
-      AssetResource.new(self).show(asset_id)
+    def assets
+      AssetResource.new(self)
     end
 
     def connection

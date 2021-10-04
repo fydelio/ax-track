@@ -8,10 +8,16 @@ module AxTrack
                                type: Asset
     end
 
-    def show(asset_id)
-
+    def retrieve(asset_id)
       Asset.new request(http_method: :get,
                           endpoint: "assets/#{asset_id}").body
+    end
+
+    def update(asset_id, **attributes)
+      Asset.new request(http_method: :patch,
+                        endpoint:  "assets/#{asset_id}",
+                        body: attributes).body
+
     end
   end
 end

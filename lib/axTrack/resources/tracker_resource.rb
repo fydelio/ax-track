@@ -8,7 +8,7 @@ module AxTrack
                                type: Tracker
     end
 
-    def show(tracker_id)
+    def retrieve(tracker_id)
       Tracker.new request(http_method: :get,
                           endpoint: "trackers/#{tracker_id}").body
     end
