@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/axTrack/version"
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require_relative "lib/ax_track/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "ax-track-ruby-client"
