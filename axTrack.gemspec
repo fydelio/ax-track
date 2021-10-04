@@ -3,7 +3,7 @@
 require_relative "lib/axTrack/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "axTrack"
+  spec.name          = "ax-track-ruby-client"
   spec.version       = AxTrack::VERSION
   spec.authors       = ["Philipp Baumann"]
   spec.email         = ["philipp@timly.ch"]
@@ -16,9 +16,9 @@ Gem::Specification.new do |spec|
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/adnexo-GmbH/ax-track-ruby"
-  spec.metadata["changelog_uri"] = "https://github.com/adnexo-GmbH/ax-track-ruby/CHANGELOG.md"
+  spec.metadata["homepage_uri"]    = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/adnexo-GmbH/ax-track-ruby-client"
+  spec.metadata["changelog_uri"]   = "https://github.com/adnexo-GmbH/ax-track-ruby-client/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
