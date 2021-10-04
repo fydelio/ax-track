@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ax-track (0.1.4)
+    ax_track (0.1.5)
       faraday (~> 1.7)
       faraday_middleware (~> 1.1)
 
@@ -58,7 +58,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  ax-track!
+  ax_track!
   minitest (~> 5.0)
   rake (~> 13.0)
   rubocop (~> 1.7)
