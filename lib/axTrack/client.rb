@@ -20,7 +20,7 @@ module AxTrack
     end
 
     def tracker(tracker_id)
-      TrackerResource.new(self).tracker(tracker_id)
+      TrackerResource.new(self).show(tracker_id)
     end
 
     def last_gps_position(tracker_id)
@@ -28,6 +28,14 @@ module AxTrack
               endpoint: "trackers/#{tracker_id}",
               params: { fields: 'last_gps_measurement' },
               result_subset: 'last_gps_measurement')
+    end
+
+    def asset_list
+      AssetResource.new(self).list
+    end
+
+    def asset(asset_id)
+      AssetResource.new(self).show(asset_id)
     end
 
     def connection

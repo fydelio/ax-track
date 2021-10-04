@@ -26,16 +26,26 @@ Or install it yourself as:
 client == AxTrack::Client.new(api_key: ENV("AXTRACK_API_KEY"))
 ```
 
-To list all trackers
+### Trackers
 ```ruby
-client.trackers
-```
+# Get a list of all trackers
+client.tracker_list
 
-
-To get the information on a specific tracker
-```ruby
+# Get the specific information of a specific tracker
 client.tracker(:tracker_id)
 ```
+
+### Assets
+```ruby
+# Get a list of all assets
+client.asset_list
+
+# Get a specific asset
+client.asset(:asset_id)
+
+# Update a specif asset
+client.tracker(:tracker_id)
+``
 
 ## Development
 

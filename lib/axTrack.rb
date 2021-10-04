@@ -10,9 +10,10 @@ module AxTrack
   autoload :Resource, 'axTrack/resource'
 
   autoload :Tracker, 'axTrack/objects/tracker'
-  autoload :TrackerList, 'axTrack/objects/tracker_list'
+  autoload :Asset, 'axTrack/objects/asset'
 
-  autoload :TrackerResource, 'axTrack/resources/trackers'
+  autoload :TrackerResource, 'axTrack/resources/tracker_resource'
+  autoload :AssetResource, 'axTrack/resources/asset_resource'
 
   class TrackerData < Object; end
   class TrackersList < Object; end
