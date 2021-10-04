@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client == AxTrack::Client.new(api_key: ENV("AXTRACK_API_KEY"))
+client == AxTrack::Client.new(api_key: your_api_key)
 ```
 
 ### Trackers
@@ -45,9 +45,9 @@ client.asset.retrieve(:asset_id)
 
 # Update a specif asset
 client.asset.update(:tracker_id, params)
-#to update the name
+#t Example: to update the name
 client.tracker.update(:tracker_id, name: 'New name')
-``
+```
 
 ## Development
 
