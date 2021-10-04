@@ -15,6 +15,4 @@ module AxTrack
   autoload :TrackerResource, 'ax_track/resources/tracker_resource'
   autoload :AssetResource, 'ax_track/resources/asset_resource'
 
-  class TrackerData < Object; end
-  class TrackersList < Object; end
 end

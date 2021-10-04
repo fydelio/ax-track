@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require_relative "lib/ax_track/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ax-track-ruby-client"
+  spec.name          = "ax-track"
   spec.version       = AxTrack::VERSION
   spec.authors       = ["Philipp Baumann"]
   spec.email         = ["philipp@timly.ch"]
