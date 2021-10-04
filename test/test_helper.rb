@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "axTrack"
+require "ax_track"
 
 require "minitest/autorun"
