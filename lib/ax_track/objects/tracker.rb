@@ -7,6 +7,7 @@ module AxTrack
       @active =           json_response['active']
       @model =            json_response['model']
       @axtrack_asset_id = json_response['asset']
+      @asset_details      = Asset.new json_response['asset_details'] if json_response['asset_details']
       @name =             json_response.dig('asset_details', 'name')
       @last_message_timestamp = DateTime.parse(json_response['last_message_timestamp'], false) if json_response['last_message_timestamp']
       @url =              json_response['url']

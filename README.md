@@ -1,4 +1,4 @@
-# AxTrack
+# AxTrack API Ruby Wrapper
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/axTrack`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-client == AxTrack::Client.new(api_key: your_api_key)
+client = AxTrack::Client.new(api_key: your_api_key)
 ```
 
 ### Trackers
