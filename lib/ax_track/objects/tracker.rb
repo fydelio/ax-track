@@ -2,15 +2,16 @@ module AxTrack
   class Tracker < Object
 
     def initialize(json_response)
-      @id =               json_response['id']
+      @tracker_id =       json_response['id']
+      @asset_id =         json_response['asset']
       @url =              json_response['url']
       @active =           json_response['active']
       @model =            json_response['model']
-      @axtrack_asset_id = json_response['asset']
       @asset_details      = Asset.new json_response['asset_details'] if json_response['asset_details']
       @name =             json_response.dig('asset_details', 'name')
       @last_message_timestamp = DateTime.parse(json_response['last_message_timestamp'], false) if json_response['last_message_timestamp']
       @url =              json_response['url']
+      @user_url =         website_url(@asset_id)
       @last_gps_position = GPSPosition.new(json_response['last_gps_measurement'] || json_response['asset_details'])
 
       @battery =          json_response.dig('asset_details', 'sensor_data', 'battery', 'value')
@@ -26,6 +27,11 @@ module AxTrack
       # returns a hash with available senson data
       self.sensor_data.keys
     end
+
+    def website_url
+      "https://app.ax-track.ch/#/map/assets/#{id}"
+    end
+
 
     class GPSPosition < Object
 
