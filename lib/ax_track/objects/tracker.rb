@@ -20,6 +20,8 @@ module AxTrack
 
       @sensor_data       = sensor_data
 
+      @network           = json_response['network']
+
       create_getters
     end
 
