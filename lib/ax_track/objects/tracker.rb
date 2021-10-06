@@ -11,7 +11,7 @@ module AxTrack
       @name =             json_response.dig('asset_details', 'name')
       @last_message_timestamp = DateTime.parse(json_response['last_message_timestamp'], false) if json_response['last_message_timestamp']
       @url =              json_response['url']
-      @user_url =         website_url(@asset_id)
+      @user_url =         website_url
       @last_gps_position = GPSPosition.new(json_response['last_gps_measurement'] || json_response['asset_details'])
 
       @battery =          json_response.dig('asset_details', 'sensor_data', 'battery', 'value')
@@ -29,7 +29,7 @@ module AxTrack
     end
 
     def website_url
-      "https://app.ax-track.ch/#/map/assets/#{id}"
+      "https://app.ax-track.ch/#/map/assets/#{@tracker_id}"
     end
 
 
