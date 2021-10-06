@@ -28,7 +28,9 @@ module AxTrack
     def available_sensor_data
       # returns a hash with available senson data
       sensor_data_temp = self.sensor_data.keys
-      sensor_data_temp = sensor_data_temp.unshift('gps') if self.respond_to? :last_gps_position
+      # if no timestamp is available in the GPSPosition, then there wasn't a last_gps_measurement returned in the json
+      # hence the sensor doesn't contain a GPS module.
+      sensor_data_temp = sensor_data_temp.unshift('gps') if self.last_gps_position.respond_to? :timestamp
       sensor_data_temp
     end
 
