@@ -9,10 +9,14 @@ module AxTrack
 
     BASE_URL = 'https://prod.api.ax-track.ch/api/v1'.freeze
 
+    APIKeyMissing = Class.new(StandardError)
+
     attr_reader :api_key, :adapter
     def initialize(api_key: ENV['AXTRACK_API_KEY'], adapter: Faraday.default_adapter)
       @api_key = api_key
       @adapter = adapter
+
+      raise APIKeyMissing, "No API key provided" if !defined?(api_key) || api_key.nil? ||  api_key.empty?
     end
 
     def trackers
