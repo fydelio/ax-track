@@ -24,11 +24,7 @@ module AxTrack
 
     def available_sensor_data
       # returns a hash with available senson data
-      self.senson_data.keys
-    end
-
-    def last_gps_position
-      self.last_gps_position
+      self.sensor_data.keys
     end
 
     class GPSPosition < Object
