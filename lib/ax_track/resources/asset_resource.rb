@@ -13,10 +13,11 @@ module AxTrack
                           endpoint: "assets/#{asset_id}").body
     end
 
-    def update(asset_id, **attributes)
+    def update(asset_id, headers: {}, **attributes)
       Asset.new request(http_method: :patch,
                         endpoint:  "assets/#{asset_id}",
-                        body: attributes).body
+                        body: attributes,
+                        headers: {}).body
 
     end
   end

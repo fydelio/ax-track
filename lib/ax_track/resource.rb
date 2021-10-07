@@ -3,14 +3,14 @@ module AxTrack
   class Resource
     attr_reader :client, :response
 
-    GithubAPIError = Class.new(StandardError)
-    BadRequestError = Class.new(GithubAPIError)
-    UnauthorizedError = Class.new(GithubAPIError)
-    ForbiddenError = Class.new(GithubAPIError)
-    ApiRequestsQuotaReachedError = Class.new(GithubAPIError)
-    NotFoundError = Class.new(GithubAPIError)
-    UnprocessableEntityError = Class.new(GithubAPIError)
-    ApiError = Class.new(GithubAPIError)
+    ApiError = Class.new(StandardError)
+    BadRequestError = Class.new(ApiError)
+    UnauthorizedError = Class.new(ApiError)
+    ForbiddenError = Class.new(ApiError)
+    ApiRequestsQuotaReachedError = Class.new(ApiError)
+    NotFoundError = Class.new(ApiError)
+    UnprocessableEntityError = Class.new(ApiError)
+    ApiError = Class.new(ApiError)
 
     HTTP_OK_CODE = 200
 
@@ -43,9 +43,7 @@ module AxTrack
         BadRequestError
       when HTTP_UNAUTHORIZED_CODE
         UnauthorizedError
-      when HTTP_FORBIDDEN_CODE
-        ForbiddenError
-      when HTTP_NOT_FOUND_CODE
+      when HTTP_NOT_FOUND_CODE, HTTP_FORBIDDEN_CODE
         NotFoundError
       when HTTP_UNPROCESSABLE_ENTITY_CODE
         UnprocessableEntityError

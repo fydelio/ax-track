@@ -34,7 +34,7 @@ client = AxTrack::Client.new(api_key: your_api_key)
 # Get a list of all trackers
 client.tracker.list
 
-# Get the specific information of a specific tracker
+# Get the specific information of a specific tracker. If :asset_id is invalid, a AxTrack::Resource::NotFoundError is returned
 client.tracker.retrieve(:tracker_id)
 ```
 
@@ -43,7 +43,7 @@ client.tracker.retrieve(:tracker_id)
 # Get a list of all assets
 client.asset.list
 
-# Get a specific asset
+# Get a specific asset. If :asset_id is invalid, a AxTrack::Resource::NotFoundError is returned
 client.asset.retrieve(:asset_id)
 
 # Update a specif asset
@@ -51,6 +51,9 @@ client.asset.update(:tracker_id, params)
 #t Example: to update the name
 client.tracker.update(:tracker_id, name: 'New name')
 ```
+
+### Errors
+
 
 ## Development
 
