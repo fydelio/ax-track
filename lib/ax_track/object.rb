@@ -8,9 +8,6 @@ module AxTrack
     def create_getters(required_getter_methods = instance_variables.map { |attr_name| attr_name[1..-1 ]})
       required_getter_methods.each do |attr|
         singleton_class.send :attr_reader, attr unless self.respond_to? attr
-        # define_singleton_method(v.to_s.tr('@','')) do
-        #   instance_variable_get(v)
-        # end
       end
     end
 

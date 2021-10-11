@@ -10,7 +10,6 @@ module AxTrack
     ApiRequestsQuotaReachedError = Class.new(ApiError)
     NotFoundError = Class.new(ApiError)
     UnprocessableEntityError = Class.new(ApiError)
-    ApiError = Class.new(ApiError)
 
     HTTP_OK_CODE = 200
 

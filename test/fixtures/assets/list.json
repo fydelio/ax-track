@@ -1,0 +1,87 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1116,
+            "url": "https://prod.api.ax-track.ch/api/v1/assets/1116/",
+            "name": "New NameXYZ",
+            "identification": null,
+            "asset_type": 24,
+            "asset_type_marker": "https://prod.api.ax-track.ch/media/animal_markers/temperature.svg",
+            "asset_type_identifier": "temperature",
+            "picture": null,
+            "owner": 137,
+            "color": "#000000",
+            "sensor_data": {
+                "temperature": {
+                    "last_update": "2021-10-05T10:32:11.040000+02:00",
+                    "value": 22.1
+                },
+                "battery": {
+                    "last_update": "2021-10-05T10:32:11.040000+02:00",
+                    "value": 59.0
+                },
+                "humidity": {
+                    "last_update": "2021-10-05T10:32:11.040000+02:00",
+                    "value": 49.0
+                }
+            },
+            "lat": 47.37697190543538,
+            "lng": 8.531547243872069,
+            "position": {
+                "longitude": 8.531547243872069,
+                "latitude": 47.37697190543538
+            },
+            "static": true,
+            "permissions": {
+                "access": "WRITE"
+            },
+            "asset_type_type": "temperature",
+            "asset_documents_url": "https://prod.api.ax-track.ch/api/v1/assets/1116/documents/",
+            "device_documentation_url": "https://prod.api.ax-track.ch/api/v1/assets/1116/documentation",
+            "alert": false
+        },
+        {
+            "id": 1361,
+            "url": "https://prod.api.ax-track.ch/api/v1/assets/1361/",
+            "name": "Timly-Dumper-001",
+            "identification": "70B3D57050006F3B",
+            "asset_type": 33,
+            "asset_type_marker": "https://prod.api.ax-track.ch/media/animal_markers/dumper.svg",
+            "asset_type_identifier": "dumper",
+            "picture": null,
+            "owner": 137,
+            "color": "#000000",
+            "sensor_data": {
+                "temperature": {
+                    "last_update": "2021-10-02T11:47:16.544000+02:00",
+                    "value": 26.7
+                },
+                "battery": {
+                    "last_update": "2021-10-04T11:51:14.144000+02:00",
+                    "value": 62.0
+                },
+                "humidity": {
+                    "last_update": "2021-10-02T11:47:16.544000+02:00",
+                    "value": 88.0
+                }
+            },
+            "lat": 47.3402603,
+            "lng": 8.5789023,
+            "position": {
+                "longitude": 8.5789023,
+                "latitude": 47.3402603
+            },
+            "static": false,
+            "permissions": {
+                "access": "WRITE"
+            },
+            "asset_type_type": "dumper",
+            "asset_documents_url": "https://prod.api.ax-track.ch/api/v1/assets/1361/documents/",
+            "device_documentation_url": "https://prod.api.ax-track.ch/api/v1/assets/1361/documentation",
+            "alert": false
+        }
+    ]
+}

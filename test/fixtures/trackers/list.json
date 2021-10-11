@@ -1,0 +1,150 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1355,
+            "url": "https://prod.api.ax-track.ch/api/v1/trackers/1355/",
+            "identifier": "70B3D57050006F3B",
+            "active": true,
+            "rfid": "70B3D57050006F3B",
+            "deveui": "70B3D57050006F3B",
+            "model": "dm-oyster",
+            "search_mode": false,
+            "asset": 1361,
+            "asset_details": {
+                "id": 1361,
+                "url": "https://prod.api.ax-track.ch/api/v1/assets/1361/",
+                "name": "Schneidgeräte",
+                "identification": "70B3D57050006F3B",
+                "asset_type": 33,
+                "asset_type_marker": "https://prod.api.ax-track.ch/media/animal_markers/dumper.svg",
+                "asset_type_identifier": "dumper",
+                "picture": null,
+                "owner": 137,
+                "color": "#000000",
+                "sensor_data": {
+                    "temperature": {
+                        "last_update": "2021-10-02T11:47:16.544000+02:00",
+                        "value": 26.7
+                    },
+                    "battery": {
+                        "last_update": "2021-10-10T14:58:23.408000+02:00",
+                        "value": 59.0
+                    },
+                    "humidity": {
+                        "last_update": "2021-10-02T11:47:16.544000+02:00",
+                        "value": 88.0
+                    }
+                },
+                "lat": 47.3402242,
+                "lng": 8.5788806,
+                "position": {
+                    "longitude": 8.5788806,
+                    "latitude": 47.3402242
+                },
+                "static": false,
+                "permissions": {
+                    "access": "WRITE"
+                },
+                "asset_type_type": "dumper",
+                "asset_documents_url": "https://prod.api.ax-track.ch/api/v1/assets/1361/documents/",
+                "device_documentation_url": "https://prod.api.ax-track.ch/api/v1/assets/1361/documentation",
+                "alert": false
+            },
+            "location": null,
+            "location_details": null,
+            "owner": 137,
+            "network": "swisscom",
+            "last_gps_measurement": {
+                "timestamp": "2021-10-10T14:58:23.408000+02:00",
+                "lat": 47.3402242,
+                "lng": 8.5788806,
+                "gps_accuracy": null,
+                "is_position_accurate": true,
+                "altitude": null,
+                "counter": 103,
+                "satellites": null,
+                "is_outside": null,
+                "temperature": null,
+                "battery": null,
+                "kind": "gps-fix",
+                "event": "periodic",
+                "sensor_data": {
+                    "battery": 59.0
+                },
+                "network_data": {
+                    "network": "swisscom",
+                    "rssi": -87.0,
+                    "sf": 12,
+                    "snr": 15.0
+                }
+            },
+            "last_message_timestamp": "2021-10-10T12:58:23.408000Z",
+            "tracker_status": null
+        },
+        {
+            "id": 1106,
+            "url": "https://prod.api.ax-track.ch/api/v1/trackers/1106/",
+            "identifier": "78AF58414458003F",
+            "active": true,
+            "rfid": "78AF58414458003F",
+            "deveui": "78AF58414458003F",
+            "model": "ax-caeli",
+            "search_mode": false,
+            "asset": 1116,
+            "asset_details": {
+                "id": 1116,
+                "url": "https://prod.api.ax-track.ch/api/v1/assets/1116/",
+                "name": "Radlader Atlas Terex TL210",
+                "identification": null,
+                "asset_type": 24,
+                "asset_type_marker": "https://prod.api.ax-track.ch/media/animal_markers/temperature.svg",
+                "asset_type_identifier": "temperature",
+                "picture": null,
+                "owner": 137,
+                "color": "#000000",
+                "sensor_data": {
+                    "temperature": {
+                        "last_update": "2021-10-10T20:12:35.183000+02:00",
+                        "value": 21.4
+                    },
+                    "battery": {
+                        "last_update": "2021-10-10T20:12:35.183000+02:00",
+                        "value": 59.0
+                    },
+                    "humidity": {
+                        "last_update": "2021-10-10T20:12:35.183000+02:00",
+                        "value": 42.0
+                    }
+                },
+                "lat": 47.37697190543538,
+                "lng": 8.531547243872069,
+                "position": {
+                    "longitude": 8.531547243872069,
+                    "latitude": 47.37697190543538
+                },
+                "static": true,
+                "permissions": {
+                    "access": "WRITE"
+                },
+                "asset_type_type": "temperature",
+                "asset_documents_url": "https://prod.api.ax-track.ch/api/v1/assets/1116/documents/",
+                "device_documentation_url": "https://prod.api.ax-track.ch/api/v1/assets/1116/documentation",
+                "alert": false
+            },
+            "location": null,
+            "location_details": null,
+            "owner": 137,
+            "network": "swisscom",
+            "last_gps_measurement": null,
+            "last_message_timestamp": "2021-10-10T18:12:35.183000Z",
+            "tracker_status": {
+                "last_update": "2021-10-10T20:12:35.183000+02:00",
+                "battery": 59,
+                "battery_low": false
+            }
+        }
+    ]
+}
