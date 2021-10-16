@@ -21,7 +21,7 @@ class TrackerResourceTest < Minitest::Test
     tracker = client.trackers.retrieve(tracker_id)
 
     assert_equal AxTrack::Tracker, tracker.class
-    assert_equal tracker.tracker_id, tracker_id
+    assert_equal tracker.id, tracker_id
   end
 
 end

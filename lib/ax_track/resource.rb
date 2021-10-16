@@ -27,6 +27,14 @@ module AxTrack
     def request(http_method: :get, endpoint:, headers: {}, params: {}, body: {}, result_subset: nil)
       raise "Client not defined" unless defined? @client
       endpoint = endpoint + "/" unless endpoint[-1] == "/"
+
+      body['picture'] = Faraday::UploadIO.new(
+                  body['picture'].tempfile.path,
+                  body['picture'].content_type,
+                  body['picture'].filename
+                ) if body.key? :picture
+
+      # client.connection['headers']['Content-Type'] = 'multipart/form-data' if body.key? :picture
       @response = client.connection.public_send(http_method, endpoint, params.merge(body))
 
       unless response_successful?

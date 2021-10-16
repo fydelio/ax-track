@@ -12,6 +12,8 @@ module AxTrack
     APIKeyMissing = Class.new(StandardError)
 
     attr_reader :api_key, :adapter
+    attr_writer :connection
+
     def initialize(api_key: nil, adapter: nil, stubs: nil)
       @api_key  = api_key || ENV['AXTRACK_API_KEY']
       @adapter  = adapter || Faraday.default_adapter
@@ -38,6 +40,5 @@ module AxTrack
         conn.headers['Authorization'] = "Token #{api_key}" unless api_key.empty?
       end
     end
-
   end
 end

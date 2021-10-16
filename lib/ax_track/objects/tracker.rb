@@ -15,7 +15,8 @@ module AxTrack
     end
 
     def last_gps_position
-      GPSPosition.new(@last_gps_measurement || { lat: asset_details.lat, lng: asset_details.lng } )
+      #GPSPosition.new(@last_gps_measurement || { lat: asset_details.lat, lng: asset_details.lng } )
+      GPSPosition.new(@last_gps_measurement)
     end
 
     def battery
