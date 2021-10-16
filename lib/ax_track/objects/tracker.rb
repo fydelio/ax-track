@@ -1,28 +1,29 @@
 module AxTrack
   class Tracker < Object
 
-    def initialize(json_response)
-      @tracker_id        = json_response['id']
-      @asset_id          = json_response['asset']
-      @identifier        = json_response['identifier']
-      @url               = json_response['url']
-      @active            = json_response['active']
-      @model             = json_response['model']
-      @asset_details     = Asset.new json_response['asset_details'] if json_response['asset_details']
-      @name              =  json_response.dig('asset_details', 'name')
-      @last_message_timestamp = DateTime.parse(json_response['last_message_timestamp'], false) if json_response['last_message_timestamp']
-      @url               = json_response['url']
-      @user_url          = website_url
-      @last_gps_position = GPSPosition.new(json_response['last_gps_measurement'] || json_response['asset_details'])
+    def asset_details
+      @asset_details = Asset.new @asset_details unless @asset_details.is_a? Asset
+      @asset_details
+    end
 
-      @battery           = json_response.dig('asset_details', 'sensor_data', 'battery', 'value')
-      sensor_data        = json_response.dig('asset_details', 'sensor_data')
+    def name
+      @name = @asset_details['name']
+    end
 
-      @sensor_data       = sensor_data
+    def last_message_timestamp
+      DateTime.parse(@last_message_timestamp, false) if @last_message_timestamp
+    end
 
-      @network           = json_response['network']
+    def last_gps_position
+      GPSPosition.new(@last_gps_measurement || { lat: asset_details.lat, lng: asset_details.lng } )
+    end
 
-      create_getters
+    def battery
+      asset_details&.sensor_data.dig('battery', 'value')
+    end
+
+    def website_url
+      "https://app.ax-track.ch/#/map/assets/#{@tracker_id}"
     end
 
     def available_sensor_data
@@ -33,23 +34,5 @@ module AxTrack
       sensor_data_temp = sensor_data_temp.unshift('gps') if self.last_gps_position.respond_to? :timestamp
       sensor_data_temp
     end
-
-    def website_url
-      "https://app.ax-track.ch/#/map/assets/#{@tracker_id}"
-    end
-
-
-    class GPSPosition < Object
-
-      def initialize(json_response)
-        @lat =       json_response['lat']
-        @lng =       json_response['lng']
-        @timestamp = DateTime.parse(json_response['timestamp'], false) if json_response['timestamp']
-
-        create_getters
-      end
-
-    end
-
   end
 end

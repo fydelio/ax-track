@@ -11,6 +11,7 @@ module AxTrack
 
   autoload :Tracker, 'ax_track/objects/tracker'
   autoload :Asset, 'ax_track/objects/asset'
+  autoload :GPSPosition, 'ax_track/objects/tracker/gps_position'
 
   autoload :TrackerResource, 'ax_track/resources/tracker_resource'
   autoload :AssetResource, 'ax_track/resources/asset_resource'
