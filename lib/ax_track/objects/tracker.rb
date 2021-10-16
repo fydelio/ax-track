@@ -6,6 +6,10 @@ module AxTrack
       @asset_details
     end
 
+    def asset_id
+      asset_details.id
+    end
+
     def name
       @name = @asset_details['name']
     end
@@ -21,6 +25,10 @@ module AxTrack
 
     def battery
       asset_details&.sensor_data.dig('battery', 'value')
+    end
+
+    def sensor_data
+      asset_details.sensor_data
     end
 
     def website_url
