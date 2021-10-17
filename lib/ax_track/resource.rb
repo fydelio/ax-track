@@ -28,7 +28,7 @@ module AxTrack
       raise "Client not defined" unless defined? @client
       endpoint = endpoint + "/" unless endpoint[-1] == "/"
 
-      body['picture'] = Faraday::UploadIO.new(
+      body['picture'] = Faraday::FilePart.new(
                   body['picture'].tempfile.path,
                   body['picture'].content_type,
                   body['picture'].filename

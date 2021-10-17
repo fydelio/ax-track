@@ -32,7 +32,7 @@ module AxTrack
     end
 
     def website_url
-      "https://app.ax-track.ch/#/map/assets/#{@tracker_id}"
+      "https://app.ax-track.ch/#/map/assets/#{@id}"
     end
 
     def available_sensor_data
