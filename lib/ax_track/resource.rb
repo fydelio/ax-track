@@ -29,7 +29,7 @@ module AxTrack
       endpoint = endpoint + "/" unless endpoint[-1] == "/"
 
       body['picture'] = Faraday::FilePart.new(
-                  body['picture'].tempfile.path,
+                  body['picture'].url,
                   body['picture'].content_type,
                   body['picture'].filename
                 ) if body.key? :picture

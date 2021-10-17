@@ -22,6 +22,8 @@ class TrackerResourceTest < Minitest::Test
 
     assert_equal AxTrack::Tracker, tracker.class
     assert_equal tracker.id, tracker_id
+
+    assert_equal tracker.website_url, "https://app.ax-track.ch/#/map/assets/#{tracker_id}"
   end
 
 end
