@@ -1,4 +1,3 @@
-
 module AxTrack
   class Resource
     attr_reader :client, :response
@@ -28,11 +27,9 @@ module AxTrack
       raise "Client not defined" unless defined? @client
       endpoint = endpoint + "/" unless endpoint[-1] == "/"
 
-      body['picture'] = Faraday::FilePart.new(
-                  body['picture'].url,
-                  body['picture'].content_type,
-                  body['picture'].filename
-                ) if body.key? :picture
+      if body.keys.include?(:picture)
+        body[:picture] = Faraday::FilePart.new(body[:picture].url, body[:picture].content_type, body[:picture].filename)
+      end
 
       # client.connection['headers']['Content-Type'] = 'multipart/form-data' if body.key? :picture
       @response = client.connection.public_send(http_method, endpoint, params.merge(body))
