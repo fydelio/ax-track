@@ -16,7 +16,7 @@ class Minitest::Test
     Faraday::Adapter::Test::Stubs.new do |stub|
       path = "/#{path}" unless path[0] == '/'
       path = "#{path}/" unless path[-1] == '/'
-      path = AxTrack::Client::BASE_URL + path
+      path = AxTrack.base_url_api + path
 
       arguments = [method, path]
       # add in the body whenever it's required
