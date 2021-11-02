@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ax-track (0.2.5)
+    ax-track (0.3)
       faraday (~> 1.7)
       faraday_middleware (~> 1.1)
 
@@ -28,7 +28,7 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
-    faraday_middleware (1.1.0)
+    faraday_middleware (1.2.0)
       faraday (~> 1.0)
     minitest (5.14.4)
     multipart-post (2.1.1)
@@ -56,6 +56,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   ax-track!
@@ -64,4 +65,4 @@ DEPENDENCIES
   rubocop (~> 1.7)
 
 BUNDLED WITH
-   2.2.19
+   2.2.29

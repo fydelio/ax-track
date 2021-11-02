@@ -11,7 +11,7 @@ module AxTrack
     end
 
     def name
-      @name = @asset_details['name']
+      @name ||= asset_details.name
     end
 
     def last_message_timestamp
@@ -20,7 +20,7 @@ module AxTrack
 
     def last_gps_position
       #GPSPosition.new(@last_gps_measurement || { lat: asset_details.lat, lng: asset_details.lng } )
-      GPSPosition.new(@last_gps_measurement)
+      GPSPosition.new(@last_gps_measurement) unless @last_gps_measurement.nil?
     end
 
     def battery
@@ -32,7 +32,7 @@ module AxTrack
     end
 
     def website_url
-      "https://app.ax-track.ch/#/map/assets/#{@id}"
+      "#{AxTrack.base_url_user}#{@id}"
     end
 
     def available_sensor_data
@@ -40,7 +40,7 @@ module AxTrack
       sensor_data_temp = self.sensor_data.keys
       # if no timestamp is available in the GPSPosition, then there wasn't a last_gps_measurement returned in the json
       # hence the sensor doesn't contain a GPS module.
-      sensor_data_temp = sensor_data_temp.unshift('gps') if self.last_gps_position.respond_to? :timestamp
+      sensor_data_temp = sensor_data_temp.unshift('gps') if self.last_gps_position&.respond_to? :timestamp
       sensor_data_temp
     end
   end
